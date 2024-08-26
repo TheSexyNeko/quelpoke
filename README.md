@@ -10,7 +10,7 @@ Le prénom est transformer par calcule la somme sha1 du nom et renvoie le modulo
 Pour pouvoir tester, il faut commencer par :
 
 1. Cloner l'application via github.
-2. Ensuite il faut [télécharger Golang]("https://go.dev/dl/go1.23.0.windows-amd64.msi")
+2. Ensuite il faut [télécharger Golang]("https://go.dev/dl/")
 3. Une fois Golang installé, il faut lancer un powershell puis effectuer les commandes suivantes : 
 
     ```$ cd CHEMIN_DU_DOSSIER_DEZIP```
