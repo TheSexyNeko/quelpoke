@@ -57,7 +57,7 @@ func index(w http.ResponseWriter, r *http.Request) {
 	}
 
 	params := indexTemplateParams{
-		PokemonID: pokemonID(name, 151),
+		PokemonID: pokemonID(name, 150),
 		Name:      name,
 		Version:   env("VERSION", "dev"),
 	}
@@ -82,7 +82,7 @@ func index(w http.ResponseWriter, r *http.Request) {
 func pokemonID(name string, m uint64) uint64 {
 	hasher := sha1.New()
 	hasher.Write([]byte(name))
-	return binary.BigEndian.Uint64(hasher.Sum(nil)) % m
+	return binary.BigEndian.Uint64(hasher.Sum(nil)) % m +1
 }
 
 func pokemonName(id uint64) (string, error) {
