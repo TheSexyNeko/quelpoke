@@ -17,6 +17,6 @@ jobs:
     - name: Build the Docker image
       run: docker build . --file Dockerfile --tag my-image-name:$(date +%s)
     - name: Tag image
-      run: docker tag quelpoke:$(date +%s) europe-west9-docker.pkg.dev/infal-devops-sysops/student-robin/monapp 
+      run: docker tag quelpoke europe-west9-docker.pkg.dev/infal-devops-sysops/student-robin/monapp 
     - name: push to gcp
       run: docker push europe-west9-docker.pkg.dev/infal-devops-sysops/student-robin/monapp
