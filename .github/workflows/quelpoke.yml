@@ -9,9 +9,9 @@ jobs:
     steps:
     - uses: actions/checkout@v4
     - name: set env
-      run: echo "$(date +%s)" >> $DATE
+      run: echo "DATE=$(date +%s)" >> $GITHUB_ENV
     - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag quelpoke:$DATE
+      run: docker build . --file Dockerfile --tag quelpoke:${{ env.DATE }}
     - name: Docker login
       uses: docker/login-action@v3
       with:
@@ -19,6 +19,6 @@ jobs:
         username: _json_key_base64
         password: ${{ secrets.GOOGLE_CREDENTIALS }}
     - name: Tag image
-      run: docker tag quelpoke:$DATE europe-west9-docker.pkg.dev/infal-devops-sysops/student-robin/monapp 
+      run: docker tag quelpoke:${{ env.DATE }} europe-west9-docker.pkg.dev/infal-devops-sysops/student-robin/monapp 
     - name: push to gcp
       run: docker push europe-west9-docker.pkg.dev/infal-devops-sysops/student-robin/monapp
