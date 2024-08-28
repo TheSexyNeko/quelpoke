@@ -10,4 +10,4 @@ jobs:
     steps:
       - name: trigger deploy
         with:
-          args: apply deployment.yalm
+          args: apply pod.yalm
