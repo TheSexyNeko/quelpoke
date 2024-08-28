@@ -24,6 +24,6 @@ jobs:
         username: _json_key_base64
         password: ${{ secrets.GOOGLE_CREDENTIALS }}
     - name: Tag image
-      run: docker tag quelpoke:${{ env.DATE }} europe-west9-docker.pkg.dev/infal-devops-sysops/student-robin/monapp 
+      run: docker tag quelpoke:${{ env.DATE }} europe-west9-docker.pkg.dev/infal-devops-sysops/student-robin/quelpoke:${{ env.DATE }} 
     - name: push to gcp
-      run: docker push europe-west9-docker.pkg.dev/infal-devops-sysops/student-robin/monapp
+      run: docker push europe-west9-docker.pkg.dev/infal-devops-sysops/student-robin/quelpoke:${{ env.DATE }}
