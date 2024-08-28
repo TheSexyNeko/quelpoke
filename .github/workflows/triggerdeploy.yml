@@ -1,0 +1,13 @@
+name: Deploy
+on: 
+  workflow_run:
+    workflows: ["Quelpoke build and push"]
+    types:
+      - completed
+jobs:
+  deploy:
+    runs-on: "Quelpoke build and push"
+    steps:
+      - name: trigger deploy
+        with:
+          args: apply deployment.yalm
