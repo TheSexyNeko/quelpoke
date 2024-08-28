@@ -1,4 +1,4 @@
 main.exe
 *.json
 *.old
-*.yaml
+#*.yaml
