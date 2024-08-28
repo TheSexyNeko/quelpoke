@@ -14,11 +14,15 @@ jobs:
 
     steps:
     - uses: actions/checkout@v4
+    - name: Docker login
+      uses: docker/login-action@v3
+      with:
+        registry: <location>-docker.pkg.dev
+        username: _json_key
+        password: ${{ secrets.GOOGLE_CREDENTIAL }}
     - name: Build the Docker image
       run: docker build . --file Dockerfile --tag my-image-name:$(date +%s)
-    - name: Connect to GCP
-      run: docker login -u json_key_base64 -p '${{ secrets.GOOGLE_CREDENTIALS }}' europe-west9-docker.pkg.dev
     - name: Tag image
-      run: tag quelpoke:$(date +%s) europe-west9-docker.pkg.dev/infal-devops-sysops/student-robin/monapp 
+      run: docker tag quelpoke:$(date +%s) europe-west9-docker.pkg.dev/infal-devops-sysops/student-robin/monapp 
     - name: push to gcp
       run: docker push europe-west9-docker.pkg.dev/infal-devops-sysops/student-robin/monapp
