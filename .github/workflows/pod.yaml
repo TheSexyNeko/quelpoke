@@ -1,9 +1,0 @@
-apiVersion: v1
-kind: Pod
-metadata:
-  name: pod-robin
-  namespace: robin
-spec:
-  containers:
-  - name: quelpoke
-    image: europe-west9-docker.pkg.dev/infal-devops-sysops/student-robin/quelpoke:1724838657
