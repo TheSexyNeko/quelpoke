@@ -3,15 +3,9 @@ name: Quelpoke build and push
 on:
   push:
     branches: [ "docker-push" ]
-  pull_request:
-    branches: [ "docker-push" ]
-
 jobs:
-
   build:
-
     runs-on: ubuntu-latest
-
     steps:
     - uses: actions/checkout@v4
     - name: Docker login
@@ -19,7 +13,7 @@ jobs:
       with:
         registry: <location>-docker.pkg.dev
         username: _json_key
-        password: ${{ secrets.GOOGLE_CREDENTIAL }}
+        password: ${{ secrets.GOOGLE_CREDENTIALS }}
     - name: Build the Docker image
       run: docker build . --file Dockerfile --tag my-image-name:$(date +%s)
     - name: Tag image
