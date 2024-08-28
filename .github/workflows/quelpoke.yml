@@ -2,7 +2,7 @@ name: Quelpoke build and push
 
 on:
   push:
-    branches: [ "docker-push" ]
+    branches: [ "main" ]
 jobs:
   build:
     runs-on: ubuntu-latest
