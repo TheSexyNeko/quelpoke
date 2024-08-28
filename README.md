@@ -19,5 +19,3 @@ Pour pouvoir tester, il faut commencer par :
 
 4. Ensuite il faut aller sur un navigateur et ecrire localhost:8080 dans la barre de recherche
 5. Si tout est bon l'application est lancée.
-
-merci
