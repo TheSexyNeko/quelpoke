@@ -2,8 +2,10 @@
 name: Deploy Namespace to Kubernetes
 
 on:
-  push:
-    branches: [ "main" ]
+  workflow_run:
+    workflows: ["Quelpoke build and push"]
+    types:
+      - completed
 jobs:
   deploy:
     runs-on: ubuntu-latest
