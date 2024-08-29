@@ -20,7 +20,7 @@ spec:
     spec:
       containers:
       - name: quelpoke-robin
-        image: europe-west9-docker.pkg.dev/infal-devops-sysops/student-robin/quelpoke:1724925595
+        image: europe-west9-docker.pkg.dev/infal-devops-sysops/student-robin/quelpoke:$DOCKER_TAG
         env:
           - name: VERSION
             value: "Robin"
