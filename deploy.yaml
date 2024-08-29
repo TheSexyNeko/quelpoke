@@ -15,7 +15,10 @@ spec:
     spec:
       containers:
       - name: quelpoke-robin
-        image: europe-west9-docker.pkg.dev/infal-devops-sysops/student-robin/quelpoke:1724838657
+        image: europe-west9-docker.pkg.dev/infal-devops-sysops/student-robin/quelpoke:1724925595
+        env:
+          - name: VERSION
+            value: "Robin"
         ports:
         - containerPort: 8080
         resources:
