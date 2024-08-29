@@ -15,4 +15,4 @@ spec:
         value: /robin
     backendRefs:
     - name: service-robin
-      port: 8080
+      port: 80
