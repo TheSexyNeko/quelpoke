@@ -48,4 +48,5 @@ jobs:
         gcloud container clusters get-credentials lab-cluster --zone europe-west9 --project infal-devops-sysops
     - name: Create Namespace
       run: |
+        export DOCKER_TAG=${{ env.DOCKER_TAG }}
         cat automate.yaml | envsubst | kubectl apply -f -
